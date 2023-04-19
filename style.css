@@ -1,0 +1,144 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/*
+DARK
+cor da fonte #777DA8
+background dos quadros #24273D
+
+
+WRITE
+*/
+/*appearance (dark/write)*/
+
+/*task accomplished*/
+
+#todo-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/*general settings*/
+.btn{
+  border: none;
+  background-color: transparent;
+  color: #ffff;
+  cursor: pointer;
+}
+
+/* section main*/
+.section-center {
+  position: absolute;
+  width: 500px;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  margin-top: 80px;
+
+}
+.section-head{
+  display: flex;
+  justify-content: space-between;
+  color: #ffff;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+}
+.section-head h3 {
+  font-size: 25px;
+  letter-spacing: 7px;
+}
+.icon-config{
+  font-size: 20px;
+}
+
+/*sections */
+.section-top {
+  background: linear-gradient(to right, #505254, #2E414A, #113342);
+  height: 250px;
+}
+.section-bottom {
+  background-color: #ffff;
+}
+
+/* form */
+.todo-form{
+  display: flex;
+  align-items: center;
+  background-color: #24273D;
+  height: 30px;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 30px;
+}
+.form-btn {
+  color: #777DA8;
+  width: 30px;
+  height: 30px;
+  border: solid 1px;
+  border-radius: 20px;
+}
+.form-input {
+  font-weight: bold;
+  font-size: 15px;
+  flex: 1;
+  margin-left: 10px;
+  border: none;
+  background-color: transparent;
+  color: #777DA8;
+  outline: none;
+}
+
+/* Container Todo List */
+.todo-container{
+  display: flex;
+  flex-direction: column;
+}
+.todo-list{
+  display: flex;
+  justify-content: space-between;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  background-color: #24273D;
+  height: 30px;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 5px;
+}
+.todo-check{
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  flex: 1;
+  color: #ffff;
+}
+.todo-check p{
+  margin-left: 10px;
+}
+.todo-btn{
+  display: flex;
+}
+.btn-check{
+  color: #777DA8;
+  font-size: 25px;
+}
+.btn-control{
+  display: flex;
+  align-items: center;
+  border: none;
+  background-color: transparent;
+  color: #777DA8;
+  cursor: pointer;
+  font-size: 20px;
+  margin: 0 10px;
+}
+.delete{
+  color: red;
+}
