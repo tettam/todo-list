@@ -12,7 +12,6 @@ background dos quadros #24273D
 
 
 WRITE
-*/
 /*appearance (dark/write)*/
 
 /*task accomplished*/
@@ -141,4 +140,35 @@ WRITE
 }
 .delete{
   color: red;
+}
+
+
+@media screen and (max-width:600px) {
+  .section-center {
+    width: 400px;
+  }
+}
+
+@media screen and (max-width:450px) {
+  .section-center {
+    width: 350px;
+  }
+  .section-head h3 {
+    font-size: 15px;
+  }
+  .icon-config {
+    font-size: 15px;
+  }
+  .todo-form {
+    height: 20px;
+  }
+  .todo-form .btn{
+    width: 20px;
+    height: 20px;
+  }
+
+  /*list article*/
+  .todo-list {
+    height: 20px;
+  }
 }
