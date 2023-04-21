@@ -49,23 +49,24 @@ function addItem(event){
     //append chield
     container.appendChild(newArticle)
     setBacktoDefault()
+    checkEvent(newArticle, 'success')
     }
     else if(value != '' && editFlag){
       const item = editElement.querySelector('.todo-title')
+      const element = item.parentElement.parentElement
       item.innerHTML = value
       setBacktoDefault()
-  
+      checkEvent(element , 'edit')
     } 
     else {
-      console.log('Erro inesperado!')
+      const item = event.currentTarget
+      checkEvent(item, 'error')
     }
 }
 
 function toogleCheckIcon(e){
   const item = e.currentTarget.firstElementChild
   const isCircle = item.classList.contains('fa-circle')
-  console.log(e.currentTarget)
-
   if(isCircle){
     item.classList.replace('fa-circle' , 'fa-circle-check')
   } else {
@@ -76,7 +77,8 @@ function toogleCheckIcon(e){
 function deleteItem(e){
   const item = e.currentTarget.parentElement.parentElement
   const id = item.dataset.id
-  container.removeChild(item)
+
+  container.removeChild(item)  
 }
 
 function editItem(e){
@@ -84,8 +86,14 @@ function editItem(e){
   editElement = e.currentTarget.parentElement.previousElementSibling
   inputForm.value = editElement.innerText
   editFlag = true
+}
 
-  
+function checkEvent(e, option){
+  e.classList.add(`msg-${option}`)
+
+  setTimeout(function(){
+    e.classList.remove(`msg-${option}`)
+  }, 1000)
 }
 
 // set back to default

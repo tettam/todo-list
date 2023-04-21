@@ -92,7 +92,16 @@ WRITE
   color: #777DA8;
   outline: none;
 }
-
+/* Warning message by color */
+.msg-error{
+  border: 2px solid red;
+}
+.msg-edit{
+  border: 2px solid blue;
+}
+.msg-success{
+  border: 2px solid rgba(59, 240, 9, 0.913);
+}
 /* Container Todo List */
 .todo-container{
   display: flex;
