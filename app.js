@@ -51,8 +51,10 @@ function addItem(event){
     setBacktoDefault()
     }
     else if(value != '' && editFlag){
-      editElement.innerHTML = value
+      const item = editElement.querySelector('.todo-title')
+      item.innerHTML = value
       setBacktoDefault()
+  
     } 
     else {
       console.log('Erro inesperado!')
@@ -62,6 +64,7 @@ function addItem(event){
 function toogleCheckIcon(e){
   const item = e.currentTarget.firstElementChild
   const isCircle = item.classList.contains('fa-circle')
+  console.log(e.currentTarget)
 
   if(isCircle){
     item.classList.replace('fa-circle' , 'fa-circle-check')
@@ -78,10 +81,11 @@ function deleteItem(e){
 
 function editItem(e){
   const element = e.currentTarget.parentElement.parentElement
-
   editElement = e.currentTarget.parentElement.previousElementSibling
   inputForm.value = editElement.innerText
   editFlag = true
+
+  
 }
 
 // set back to default
