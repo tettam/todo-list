@@ -7,13 +7,13 @@ const container = document.querySelector('.todo-container')
 
 form.addEventListener('submit', function(event){
   event.preventDefault()
-  const value = inputForm.value
-  const id = new Date().getTime().toString()
-  const newArticle = document.createElement('article')
-  newArticle.setAttribute('data-id' , id)
-  newArticle.classList.add('todo-list')
+  let value = inputForm.value
+  let id = new Date().getTime().toString()
 
     if(value != ''){
+      const newArticle = document.createElement('article')
+      newArticle.setAttribute('data-id' , id)
+      newArticle.classList.add('todo-list')
       newArticle.innerHTML =
     // img check 2 
     // <button class="btn-check btn">
@@ -35,13 +35,17 @@ form.addEventListener('submit', function(event){
         </button>
       </div>`
 
-    container.appendChild(newArticle)
-    setBacktoDefault()
-
-    const deleteBtn = document.querySelector('.delete')
-    const editBtn = document.querySelector('.edit')
+    //event listeners
+    const deleteBtn = newArticle.querySelector('.delete')
     deleteBtn.addEventListener('click', deleteItem)
+
+    const editBtn = newArticle.querySelector('.edit')
     editBtn.addEventListener('click', editItem)
+
+    //append chield
+    container.appendChild(newArticle)
+
+    setBacktoDefault()
     }
     else{
       console.log('Erro inesperado!')
@@ -52,13 +56,15 @@ form.addEventListener('submit', function(event){
 function deleteItem(e){
   const item = e.currentTarget.parentElement.parentElement
   const id = item.dataset.id
-
   container.removeChild(item)
-  console.log('deletando!')
+  console.log('deletando')
 }
 
 function editItem(e){
-  console.log('editandp')
+  const item = e.currentTarget.parentElement.previousElementSibling
+  //inputForm.value =
+  console.log(item.innerHTML) 
+  
 }
 
 function setBacktoDefault(){
