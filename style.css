@@ -116,6 +116,9 @@ WRITE
   align-items: center;
   flex: 1;
   color: #ffff;
+  text-transform: capitalize;
+  font-size: 15px;
+  font-weight: bold;
 }
 .todo-check p{
   margin-left: 10px;
