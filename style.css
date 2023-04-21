@@ -92,7 +92,7 @@ WRITE
   color: #777DA8;
   outline: none;
 }
-/* Warning message by color */
+/* warning message by color */
 .msg-error{
   border: 2px solid red;
 }
@@ -102,7 +102,7 @@ WRITE
 .msg-success{
   border: 2px solid rgba(59, 240, 9, 0.913);
 }
-/* Container Todo List */
+/* container Todo List */
 .todo-container{
   display: flex;
   flex-direction: column;
@@ -151,6 +151,22 @@ WRITE
 }
 .delete{
   color: red;
+}
+
+.section-bottom{
+  width: 100vw;
+  height: 100vh;
+}
+
+/* appearance */
+.appearance-white{
+  transition: 1s;
+  color: #24273D;
+  background-color: #ffff;
+}
+.appearance-section {
+  transition: 1s;
+  background-color: #24273D;
 }
 
 

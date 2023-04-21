@@ -1,11 +1,15 @@
 const form = document.querySelector('.todo-form')
 const inputForm = document.querySelector('.form-input')
 const container = document.querySelector('.todo-container')
+const appearance = document.querySelector('.icon-config')
+
+const sectionBottom = document.querySelector('.section-bottom')
 
 //edit option
 let editElement;
 let editFlag = false
 
+appearance.addEventListener('click', appearanceTheme)
 form.addEventListener('submit', addItem)
 
 
@@ -18,10 +22,7 @@ function addItem(event){
       newArticle.setAttribute('data-id' , id)
       newArticle.classList.add('todo-list')
       newArticle.innerHTML =
-    // img check 2 
-    // <button class="btn-check btn">
-    //   <i class="fa-solid fa-circle-check"></i>
-    // </button>
+
     `<div class="todo-check">
         <button class="btn-check btn">
           <i class="fa-solid fa-circle"></i>
@@ -100,4 +101,31 @@ function checkEvent(e, option){
 function setBacktoDefault(){
   inputForm.value = ''
   editFlag = false
+}
+
+function appearanceTheme(e){
+  const item = e.currentTarget.firstElementChild
+  const obj = item.classList.contains('fa-sun')
+  const containerItems = container.querySelectorAll('*')
+  const APPEARANCE_WRITE = 'appearance-white'
+  
+  if(obj){
+    // icon-img
+    item.classList.replace('fa-sun', 'fa-moon')
+    form.classList.add(APPEARANCE_WRITE)
+    // section bottom
+    sectionBottom.classList.add('appearance-section')
+    // list(todo list)
+    containerItems.forEach((element) => {
+      element.classList.add(APPEARANCE_WRITE)
+    })
+  }
+  else {
+    item.classList.replace('fa-moon', 'fa-sun')
+    form.classList.remove(APPEARANCE_WRITE)
+    sectionBottom.classList.remove('appearance-section')
+    containerItems.forEach((element) => {
+      element.classList.remove(APPEARANCE_WRITE)
+    })
+  }
 }
