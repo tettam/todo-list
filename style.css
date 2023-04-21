@@ -159,13 +159,14 @@ WRITE
 }
 
 /* appearance */
-.appearance-white{
-  transition: 1s;
+.appearance-white {
+  transition: 0.5s;
   color: #24273D;
   background-color: #ffff;
 }
+
 .appearance-section {
-  transition: 1s;
+  transition: 0.5s;
   background-color: #24273D;
 }
 
